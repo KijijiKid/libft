@@ -6,30 +6,33 @@
 /*   By: mateoandre <mateoandre@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 12:32:30 by mateoandre        #+#    #+#             */
-/*   Updated: 2025/03/11 12:55:00 by mateoandre       ###   ########.fr       */
+/*   Updated: 2025/03/11 15:49:45 by mateoandre       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void    *ft_memcpy(char *dest, char *src, int n)
+#include <unistd.h>
+void    *ft_memcpy(void *dest, void *src, int n)
 {
     int i;
     i = 0;
-
+    if (!dest && !src)
+        return (NULL);
     while (i < n)
     {
-        dest[i] = src[i];
+        ((unsigned char*)dest)[i] = ((unsigned char*)src)[i];
         i++;
     }
     return(dest);
 }
 
+// #include <string.h>
 // #include <stdio.h>
 // int main(void)
 // {
-//     char buffer[10];
-//     char tocpy[] = "Copied here!";
+//     char buffer[4];
+//     char tocpy[]= "15739";
 
-//     ft_memcpy(buffer, tocpy, sizeof(char) * 10);
+//     ft_memcpy(buffer, tocpy, sizeof(char) * 4);
     
 //     printf("%s", buffer);
 // }
