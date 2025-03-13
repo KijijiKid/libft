@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mateoandre <mateoandre@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/10 22:35:26 by mateoandre        #+#    #+#             */
-/*   Updated: 2025/03/13 13:34:11 by mateoandre       ###   ########.fr       */
+/*   Created: 2025/03/13 13:21:21 by mateoandre        #+#    #+#             */
+/*   Updated: 2025/03/13 18:58:55 by mateoandre       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void *ft_memset(void *dst, int c, int range)
+char *ft_strchr(const char *s, int c)
 {
     int i;
+
     i = 0;
-    while (i < range)
-    {
-        ((unsigned char*) dst)[i] = (unsigned char)c;
+    while (((char *)s)[i] != c && ((char *)s)[i] != '\0')
         i++;
-    }
-    return (dst);
+    return (&((char *)s)[i]);
 }
 
-#include <stdio.h>
-#include <string.h>
-int main(void)
-{
-    char buffer[10];
+// #include <stdio.h>
+// #include <string.h>
+// int main(void)
+// {
+//     char arr1[] = "Hello World!";
+//     printf("First occurence: %s\n", ft_strchr(arr1, 'o'));
 
-    ft_memset(buffer, 'b', sizeof(char) * 11);
-    // ft_memset(buffer + 5, 'g', sizeof(char) * 5);
-    // memset(buffer, 'g', sizeof(char) * 10);
-    
-    printf("%s", buffer);
-}
+// }
