@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mateoandre <mateoandre@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/10 22:29:11 by mateoandre        #+#    #+#             */
-/*   Updated: 2025/03/10 22:33:41 by mateoandre       ###   ########.fr       */
+/*   Created: 2025/03/13 13:09:47 by mateoandre        #+#    #+#             */
+/*   Updated: 2025/03/13 13:19:49 by mateoandre       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strlen(char *str)
+
+int ft_tolower(int c)
 {
-    int i;
-    i = 0;
-    while (str[i] != '\0')
-        i++;
-    return (i);
+    if (65 <= c && c <= 90)
+        c += 32;
+    return (c);
 }
 
-// #include <stdio.h>
+
+// #include <stdio.h> 
+// #include <ctype.h>
 // int main(void)
 // {
-//     char test[]= "Frankfurt";
-//     printf("%i", ft_strlen(test));
+//     int i;
+//     char upper[] = "AB0EE";
+
+//     i = 0;
+//     while (upper[i] != '\0')
+//     {
+//         printf("Decapitalized: %c\n", (char)ft_tolower(upper[i]));
+//         i++; 
+//     }
 // }
