@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mandre <mandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/13 13:21:21 by mateoandre        #+#    #+#             */
-/*   Updated: 2025/03/14 14:58:54 by mandre           ###   ########.fr       */
+/*   Created: 2025/03/14 14:53:40 by mandre            #+#    #+#             */
+/*   Updated: 2025/03/14 15:16:14 by mandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(const char *s, int c)
+void   	*ft_memchr (const void *s, int c, int n)
 {
 	int	i;
 
 	i = 0;
-	while (((char *)s)[i] != c && ((char *)s)[i] != '\0')
+	while (((char *)s)[i] && i < n && ((char *)s)[i] != c)
 		i++;
-	return (&((char *)s)[i]);
+	return (&((i)[(void *)s]));
 }
 
-// #include <stdio.h>
-// #include <string.h>
-// int main(void)
-// {
-//     char arr1[] = "Hello World!";
-//     printf("First occurence: %s\n", ft_strchr(arr1, 'o'));
+#include <stdio.h>
+#include <string.h>
+int main(void)
+{
+    char test1[] = {'a', 'b', 'c', 'd', 'e'};
 
-// }
+    printf("%s", ft_memchr(test1, 'b', 2));
+}
