@@ -1,30 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mandre <mandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/14 14:53:40 by mandre            #+#    #+#             */
-/*   Updated: 2025/03/14 16:32:01 by mandre           ###   ########.fr       */
+/*   Created: 2025/03/14 18:03:18 by mandre            #+#    #+#             */
+/*   Updated: 2025/03/14 18:32:41 by mandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memchr(const void *s, int c, int n)
+int	ft_atoi(const char *str)
 {
 	int	i;
+	int	number;
 
 	i = 0;
-	while (((char *)s)[i] && i < n && ((char *)s)[i] != c)
+	number = 0;
+	while (str[i] != '\0' && '0' <= str[i] && str[i] <= '9')
+	{
+		number *= 10;
+		number += str[i] - '0';
 		i++;
-	return (&(((void *)s)));
+	}
+	if (str[0] == 45)
+		number *= -1;
+	return (number);
 }
 
-// #include <stdio.h>
-// #include <string.h>
-// int main(void)
-// {
-//     char test1[] = {'a', 'b', 'c', 'd', 'e'};
+#include <stdio.h>
+#include <stdlib.h>
+int	main(void)
+{
+	char arr1[] = "-1234";
 
-//     printf("%s", ft_memchr(test1, 'b', 2));
-// }
+	printf("%i", ft_atoi(arr1));
+}
