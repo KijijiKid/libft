@@ -6,9 +6,11 @@
 /*   By: mandre <mandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 19:05:21 by mateoandre        #+#    #+#             */
-/*   Updated: 2025/03/16 14:29:59 by mandre           ###   ########.fr       */
+/*   Updated: 2025/03/16 17:59:42 by mandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {
@@ -19,9 +21,8 @@ char	*ft_strrchr(const char *s, int c)
 		i++;
 	while (((unsigned char *)s)[i] != c && 0 <= i)
 		i--;
-	/*Return Wert wird NULL wenn nichts in dem String gefunden wird! Verbessern!!!*/
-	return (&((unsigned char *)s)[i]);
-
+	if (((unsigned char *)s)[i] == c)
+		return (&((unsigned char *)s)[i]);
 	return (NULL);
 }
 
@@ -30,5 +31,5 @@ char	*ft_strrchr(const char *s, int c)
 // int main(void)
 // {
 //     char arr1[] = "Hello World!";
-//     printf("First occurence: %s\n", ft_strrchr(arr1, 'l'));
+//     printf("First(Last) occurence: %s\n", ft_strrchr(arr1, 'l'));
 // }
