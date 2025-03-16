@@ -6,9 +6,11 @@
 /*   By: mandre <mandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 22:22:20 by mateoandre        #+#    #+#             */
-/*   Updated: 2025/03/16 15:44:53 by mandre           ###   ########.fr       */
+/*   Updated: 2025/03/16 17:49:30 by mandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isprint(int arg)
 {

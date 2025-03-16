@@ -6,9 +6,11 @@
 /*   By: mandre <mandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 22:15:23 by mateoandre        #+#    #+#             */
-/*   Updated: 2025/03/16 15:38:12 by mandre           ###   ########.fr       */
+/*   Updated: 2025/03/16 17:50:09 by mandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isalnum(int arg)
 {
