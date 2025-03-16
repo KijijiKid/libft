@@ -6,7 +6,7 @@
 /*   By: mandre <mandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 12:59:58 by mateoandre        #+#    #+#             */
-/*   Updated: 2025/03/16 16:50:40 by mandre           ###   ########.fr       */
+/*   Updated: 2025/03/16 18:46:15 by mandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,6 @@ void	*ft_memmove(void *dest, void *src, size_t n)
 // int main(void)
 // {
 //     char src[] = "Hello World!";
-
-
 //     ft_memmove(src + 1, src, 3);
 //     printf("Output: %s", src);
 // }

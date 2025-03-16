@@ -6,7 +6,7 @@
 /*   By: mandre <mandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 16:32:53 by mandre            #+#    #+#             */
-/*   Updated: 2025/03/16 17:56:14 by mandre           ###   ########.fr       */
+/*   Updated: 2025/03/16 18:46:50 by mandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,10 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	return ((char *)haystack);
 }
 
-
 // #include <string.h>
 // int	main(void)
 // {
 // 	char test1[] = "Hello this is World!";
 // 	char test2[] = "this";
-
 // 	printf("%s", ft_strnstr(test1, test2, 21));
 // }

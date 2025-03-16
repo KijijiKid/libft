@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mandre <mandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/13 13:09:47 by mateoandre        #+#    #+#             */
-/*   Updated: 2025/03/16 18:47:50 by mandre           ###   ########.fr       */
+/*   Created: 2025/03/16 19:02:24 by mandre            #+#    #+#             */
+/*   Updated: 2025/03/16 19:15:20 by mandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_tolower(int c)
+char	*strdup(const char *s)
 {
-	if (65 <= c && c <= 90)
-		c += 32;
-	return (c);
-}
+	size_t	i;
+	size_t	s_len;
+	char	ptr*;
 
-// #include <stdio.h> 
-// #include <ctype.h>
-// int main(void)
-// {
-//     int i;
-//     char upper[] = "AB0EE";
-//     i = 0;
-//     while (upper[i] != '\0')
-//     {
-//         printf("Decapitalized: %c\n", (char)ft_tolower(upper[i]));
-//         i++; 
-//     }
-// }
+
+	s_len = ft_strlen(s);
+	ptr = (char *)malloc(sizeof(char) * s_len) + 1;
+	if (!(ptr))
+		return (NULL);
+	i = 0;
+	while (src[i] != '\0')
+	{
+		ptr[i] = src[i];
+		i++;
+	}
+	ptr[i] = '\0';
+	return (ptr[0]);
+}
