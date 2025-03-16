@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mateoandre <mateoandre@student.42.fr>      +#+  +:+       +#+        */
+/*   By: mandre <mandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 20:11:34 by mateoandre        #+#    #+#             */
-/*   Updated: 2025/03/13 13:19:43 by mateoandre       ###   ########.fr       */
+/*   Updated: 2025/03/16 18:02:16 by mandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-int ft_toupper(int c)
+int	ft_toupper(int c)
 {
-    if (97 <= c && c <= 122)
-        c -= 32;
-    return (c);
+	if (97 <= c && c <= 122)
+		c -= 32;
+	return (c);
 }
 
 // #include <stdio.h> 
