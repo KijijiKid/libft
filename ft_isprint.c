@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mateoandre <mateoandre@student.42.fr>      +#+  +:+       +#+        */
+/*   By: mandre <mandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 22:22:20 by mateoandre        #+#    #+#             */
-/*   Updated: 2025/03/10 22:27:54 by mateoandre       ###   ########.fr       */
+/*   Updated: 2025/03/16 15:44:53 by mandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isprint(int arg)
+int	ft_isprint(int arg)
 {
-    if (20 <= arg && arg <= 127)
-        return (1);
-    return (0);
+	if (20 <= arg && arg <= 127)
+		return (1);
+	return (0);
 }
 
 // #include <stdio.h>

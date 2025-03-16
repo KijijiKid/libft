@@ -6,9 +6,11 @@
 /*   By: mandre <mandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 15:20:00 by mandre            #+#    #+#             */
-/*   Updated: 2025/03/14 16:30:42 by mandre           ###   ########.fr       */
+/*   Updated: 2025/03/16 15:56:31 by mandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, int n)
 {
@@ -25,7 +27,7 @@ int	ft_memcmp(const void *s1, const void *s2, int n)
 // int main(void)
 // {
 // 	char test1[] = "12345";
-//     char test2[] = "12346";
+//     char test2[] = "12345";
 
 // 	printf("%i", ft_memcmp(test1, test2, 5));
 // }

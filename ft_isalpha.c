@@ -3,19 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mateoandre <mateoandre@student.42.fr>      +#+  +:+       +#+        */
+/*   By: mandre <mandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 22:15:12 by mateoandre        #+#    #+#             */
-/*   Updated: 2025/03/10 22:28:10 by mateoandre       ###   ########.fr       */
+/*   Updated: 2025/03/16 15:21:54 by mandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isalpha(int arg)
+#include "libft.h"
+
+int	ft_isalpha(int arg)
 {
-    if (('a' <= arg && arg <= 'z') || ('A' <= arg && arg <= 'Z'))
-        return (1);
-    else
-        return (0);
+	if (('a' <= arg && arg <= 'z') || ('A' <= arg && arg <= 'Z'))
+		return (1);
+	else
+		return (0);
 }
 
 // #include <stdio.h>

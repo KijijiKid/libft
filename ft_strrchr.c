@@ -3,23 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mateoandre <mateoandre@student.42.fr>      +#+  +:+       +#+        */
+/*   By: mandre <mandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 19:05:21 by mateoandre        #+#    #+#             */
-/*   Updated: 2025/03/13 19:11:25 by mateoandre       ###   ########.fr       */
+/*   Updated: 2025/03/16 14:29:59 by mandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (s[i] != '\0')
-        i++;
-    while (((char *)s)[i] != c && 0 <= i)
-        i--;
-    return (&((char *)s)[i]);
+	i = 0;
+	while (s[i] != '\0')
+		i++;
+	while (((unsigned char *)s)[i] != c && 0 <= i)
+		i--;
+	/*Return Wert wird NULL wenn nichts in dem String gefunden wird! Verbessern!!!*/
+	return (&((unsigned char *)s)[i]);
+
+	return (NULL);
 }
 
 // #include <stdio.h>

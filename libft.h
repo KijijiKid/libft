@@ -1,34 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mandre <mandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/10 23:27:39 by mateoandre        #+#    #+#             */
-/*   Updated: 2025/03/16 16:15:14 by mandre           ###   ########.fr       */
+/*   Created: 2025/03/16 15:26:51 by mandre            #+#    #+#             */
+/*   Updated: 2025/03/16 15:30:28 by mandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef LIBFT_H_
+#define LIBFT_H_
 
-void	ft_bzero(void *str, size_t size)
-{
-	size_t	i;
+# include <stdlib.h>
+# include <unistd.h>
 
-	i = 0;
-	while (i < size)
-	{
-		((unsigned char *)str)[i] = (unsigned char)0;
-		i++;
-	}
-}
-
-// #include <stdio.h>
-// int main(void)
-// {
-//     char buffer[] = "SeeYou";
-//     printf("Before: %s\n", buffer);
-//     ft_bzero(buffer, 3);
-//     printf("After: %c", buffer[3]);
-// }
+#endif

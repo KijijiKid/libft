@@ -6,16 +6,21 @@
 /*   By: mandre <mandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 18:03:18 by mandre            #+#    #+#             */
-/*   Updated: 2025/03/14 18:32:41 by mandre           ###   ########.fr       */
+/*   Updated: 2025/03/16 15:35:36 by mandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_atoi(const char *str)
 {
 	int	i;
 	int	number;
 
-	i = 0;
+	if (str[0] == 45)
+		i = 1;
+	else
+		i = 0;
 	number = 0;
 	while (str[i] != '\0' && '0' <= str[i] && str[i] <= '9')
 	{
@@ -28,11 +33,11 @@ int	ft_atoi(const char *str)
 	return (number);
 }
 
-#include <stdio.h>
-#include <stdlib.h>
-int	main(void)
-{
-	char arr1[] = "-1234";
+// #include <stdio.h>
+// #include <stdlib.h>
+// int	main(void)
+// {
+// 	char arr1[] = "-2147483648";
 
-	printf("%i", ft_atoi(arr1));
-}
+// 	printf("%i", ft_atoi(arr1));
+// }
