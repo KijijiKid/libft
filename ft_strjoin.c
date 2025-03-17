@@ -1,41 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mandre <mandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/17 10:37:22 by mandre            #+#    #+#             */
-/*   Updated: 2025/03/17 14:30:07 by mandre           ###   ########.fr       */
+/*   Created: 2025/03/17 14:18:13 by mandre            #+#    #+#             */
+/*   Updated: 2025/03/17 14:28:11 by mandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(const char *s, unsigned int start, size_t len)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t		i;
-	char		*substr;
+	int		i;
+	char	*str;
 
-	if (!s)
+
+	if (!s1 && !s2)
 		return (NULL);
-	if (ft_strlen(s) < start || ft_strlen(s) < start + len)
-		return (ft_strdup(""));
-	substr = (char *)ft_calloc(len + 1, sizeof(char));
-	if (!(substr))
+	str = calloc(ft_strlen(s1) + ft_strlen(s2) + 1, sizeof(char));
+	if (!str)
 		return (NULL);
 	i = 0;
-	while (i < len)
+	while (i < ft_strlen(s1))
 	{
-		substr[i] = s[i + start];
+		str[i] = s1[i];
 		i++;
 	}
-	return (substr);
+	while (i < ft_strlen(s1) + ft_strlen(s2))
+	{
+		str[i] = s2[i];
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
 }
-
-// int	main(void)
-// {
-// 	// char arr1[] = "Hello World!";
-
-// 	printf("%s\n", ft_substr("Hello World!", 2, 5));
-// }
