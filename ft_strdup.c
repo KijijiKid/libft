@@ -6,7 +6,7 @@
 /*   By: mandre <mandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 19:02:24 by mandre            #+#    #+#             */
-/*   Updated: 2025/03/17 12:06:38 by mandre           ###   ########.fr       */
+/*   Updated: 2025/03/17 14:01:12 by mandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,18 @@ char	*ft_strdup(const char *s)
 {
 	size_t	i;
 	size_t	s_len;
-	char	ptr*;
+	char	*ptr;
 
 	s_len = ft_strlen(s);
 	ptr = (char *)malloc(sizeof(char) * s_len) + 1;
 	if (!(ptr))
 		return (NULL);
 	i = 0;
-	while (src[i] != '\0')
+	while (s[i] != '\0')
 	{
-		ptr[i] = src[i];
+		ptr[i] = s[i];
 		i++;
 	}
 	ptr[i] = '\0';
-	return (ptr[0]);
+	return (ptr);
 }
