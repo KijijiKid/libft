@@ -6,7 +6,21 @@
 /*   By: mandre <mandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/17 14:34:07 by mandre            #+#    #+#             */
-/*   Updated: 2025/03/17 14:34:44 by mandre           ###   ########.fr       */
+/*   Updated: 2025/03/17 18:41:59 by mandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
+char	*ft_strtrim(const char *s1, const char *set)
+{
+	int	i;
+	int	x;
+
+	i = 0;
+	while (set[i] != '\0')//1: a 2: b
+	{
+		x = 0;
+		while (s)
+	}
+}
