@@ -1,33 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mandre <mandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/16 19:02:24 by mandre            #+#    #+#             */
-/*   Updated: 2025/03/17 12:06:38 by mandre           ###   ########.fr       */
+/*   Created: 2025/03/17 10:37:22 by mandre            #+#    #+#             */
+/*   Updated: 2025/03/17 12:09:51 by mandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s)
+char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
-	size_t	i;
-	size_t	s_len;
-	char	ptr*;
+	size_t		i;
+	char		*substr;
 
-	s_len = ft_strlen(s);
-	ptr = (char *)malloc(sizeof(char) * s_len) + 1;
-	if (!(ptr))
+	if (!s)
+		return (NULL);
+	if (ft_strlen(s) < start || ft_strlen(s) < start + len)
+		return (ft_strdup(""));
+	substr = (char *)ft_calloc(len, 1);
+	if (!(substr))
 		return (NULL);
 	i = 0;
-	while (src[i] != '\0')
+	while (i < len)
 	{
-		ptr[i] = src[i];
+		substr[i] = s[i + start];
 		i++;
 	}
-	ptr[i] = '\0';
-	return (ptr[0]);
+	return (substr);
+}
+
+
+int	main(void)
+{
+	// char arr1[] = "Hello World!";
+
+	printf("%s\n", ft_substr("Hello World!", 2, 5));
 }
