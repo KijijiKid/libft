@@ -6,7 +6,7 @@
 /*   By: mandre <mandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 18:48:20 by mandre            #+#    #+#             */
-/*   Updated: 2025/03/17 15:22:37 by mandre           ###   ########.fr       */
+/*   Updated: 2025/03/19 10:24:17 by mandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ void	*ft_calloc(size_t count, size_t size)
 		tmp[i] = 0;
 		i++;
 	}
-	return (tmp[0]);
+	return (tmp);
 }
