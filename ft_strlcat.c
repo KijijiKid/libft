@@ -6,7 +6,7 @@
 /*   By: mandre <mandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 19:34:27 by mateoandre        #+#    #+#             */
-/*   Updated: 2025/03/16 17:44:24 by mandre           ###   ########.fr       */
+/*   Updated: 2025/03/20 10:27:01 by mandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	int	src_len;
-	int	dst_len;
-	int	i;
-	int	x;
+	int		src_len;
+	int		dst_len;
+	int		i;
+	size_t	x;
 
 	dst_len = 0;
 	src_len = 0;

@@ -6,7 +6,7 @@
 /*   By: mandre <mandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/17 14:18:13 by mandre            #+#    #+#             */
-/*   Updated: 2025/03/17 14:28:11 by mandre           ###   ########.fr       */
+/*   Updated: 2025/03/20 10:42:48 by mandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int		i;
-	char	*str;
-
+	size_t		i;
+	char		*str;
 
 	if (!s1 && !s2)
 		return (NULL);

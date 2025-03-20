@@ -6,7 +6,7 @@
 /*   By: mandre <mandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 15:18:05 by mateoandre        #+#    #+#             */
-/*   Updated: 2025/03/16 17:48:26 by mandre           ###   ########.fr       */
+/*   Updated: 2025/03/20 10:27:34 by mandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	int	i;
-	int	s_len;
-	int	cpy_len;
+	int		i;
+	size_t	s_len;
+	int		cpy_len;
 
 	i = 0;
 	s_len = 0;
