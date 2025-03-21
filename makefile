@@ -16,7 +16,12 @@ $(NAME):$(OBJECTS)
 	$(CC) $(CFLAGS) -c -o $@ $^
 
 clean:
+	@echo 
+	@echo "Removing all executables!"
+	@echo
 	rm -rf $(NAME) $(OBJECTS)
 
 fclean: clean
 	rm -f $(NAME)
+
+.PHONY: all clean fclean re

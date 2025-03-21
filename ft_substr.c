@@ -6,7 +6,7 @@
 /*   By: mandre <mandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/17 10:37:22 by mandre            #+#    #+#             */
-/*   Updated: 2025/03/17 14:30:07 by mandre           ###   ########.fr       */
+/*   Updated: 2025/03/21 17:20:18 by mandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,5 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 // int	main(void)
 // {
 // 	// char arr1[] = "Hello World!";
-
 // 	printf("%s\n", ft_substr("Hello World!", 2, 5));
 // }

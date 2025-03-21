@@ -6,7 +6,7 @@
 /*   By: mandre <mandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 10:40:27 by mandre            #+#    #+#             */
-/*   Updated: 2025/03/20 11:04:16 by mandre           ###   ########.fr       */
+/*   Updated: 2025/03/21 17:14:52 by mandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,44 @@ int	wrd_count(char const *s, char c)
 	return (count);
 }
 
-// char	**ft_split(char const *s, char c)
-// {
-// 		char	**array;
+char	*write_word(char const *s, char c)
+{
+	int		i;
+	char	*array;
 
-// }
-// #include "string.h"
+	i = 0;
+	while (s[i] != '\0')
+	{
+		if (s[i] == c)
+		{
+			array[i] = '\0';
+			return (array);
+		}
+		else
+			array[i] = s[i];
+		i++;
+	}
+	return (array[0] = '\0');
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**array;
+	int		word_count;
+	int		i;
+
+	word_count = wrd_count(s, c);
+	array = ft_calloc(word_count + 1, sizeof(char));
+	i = 0;
+	while (i < word_count)
+	{
+		array[i] = write_word(s, c);
+		i++;
+	}
+	return (array);
+}
+
+// #include "stdio.h"
 // int	main(void)
 // {
 // 	char test[] = "	This 	is 	so different to strtrim ";
