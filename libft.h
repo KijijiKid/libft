@@ -6,7 +6,7 @@
 /*   By: mandre <mandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 15:26:51 by mandre            #+#    #+#             */
-/*   Updated: 2025/03/20 10:41:29 by mandre           ###   ########.fr       */
+/*   Updated: 2025/03/21 17:31:37 by mandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-// # include <stdio.h>
 
 int		ft_atoi(const char *str);
 void	ft_bzero(void *str, size_t size);
