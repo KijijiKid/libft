@@ -6,7 +6,7 @@
 /*   By: mandre <mandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 10:40:27 by mandre            #+#    #+#             */
-/*   Updated: 2025/03/21 17:14:52 by mandre           ###   ########.fr       */
+/*   Updated: 2025/03/22 14:10:35 by mandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ char	*write_word(char const *s, char c)
 	char	*array;
 
 	i = 0;
+	array = NULL;
 	while (s[i] != '\0')
 	{
 		if (s[i] == c)
@@ -50,7 +51,7 @@ char	*write_word(char const *s, char c)
 			array[i] = s[i];
 		i++;
 	}
-	return (array[0] = '\0');
+	return (array);
 }
 
 char	**ft_split(char const *s, char c)
