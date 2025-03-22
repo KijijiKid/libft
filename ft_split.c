@@ -6,7 +6,7 @@
 /*   By: mandre <mandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 10:40:27 by mandre            #+#    #+#             */
-/*   Updated: 2025/03/22 14:10:35 by mandre           ###   ########.fr       */
+/*   Updated: 2025/03/22 17:21:42 by mandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,16 @@ int	wrd_count(char const *s, char c)
 	return (count);
 }
 
+int	word_len(char const *s, char c)// 
+{
+	int	i;
+
+	i = 0;
+	while (s[i] != '\0' || s[i] != c)
+		i++;
+	return (i);
+}
+
 char	*write_word(char const *s, char c)
 {
 	int		i;
@@ -40,7 +50,7 @@ char	*write_word(char const *s, char c)
 
 	i = 0;
 	array = NULL;
-	while (s[i] != '\0')
+	while ((s[i] != '\0') && s[i] != c)
 	{
 		if (s[i] == c)
 		{
@@ -61,19 +71,19 @@ char	**ft_split(char const *s, char c)
 	int		i;
 
 	word_count = wrd_count(s, c);
-	array = ft_calloc(word_count + 1, sizeof(char));
+	array = ft_calloc(word_count + 1, sizeof(char *));
 	i = 0;
 	while (i < word_count)
 	{
 		array[i] = write_word(s, c);
 		i++;
 	}
+	array[i] = NULL;
 	return (array);
 }
 
-// #include "stdio.h"
 // int	main(void)
 // {
-// 	char test[] = "	This 	is 	so different to strtrim ";
+// 	char test[] = "	This is so different to strtrim";
 // 	printf("After: %i\n", wrd_count(test, ' '));
 // }
