@@ -6,7 +6,7 @@
 /*   By: mandre <mandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 19:34:27 by mateoandre        #+#    #+#             */
-/*   Updated: 2025/03/20 10:27:01 by mandre           ###   ########.fr       */
+/*   Updated: 2025/03/22 11:47:36 by mandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	int		src_len;
-	int		dst_len;
-	int		i;
-	size_t	x;
+	size_t		src_len;
+	size_t		dst_len;
+	size_t		i;
+	size_t		x;
 
 	dst_len = 0;
 	src_len = 0;
@@ -25,15 +25,18 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 		src_len++;
 	while (dst[dst_len] != '\0')
 		dst_len++;
+	if (dstsize <= dst_len)
+		return (dstsize + src_len);
 	i = 0;
 	x = dst_len;
-	while (x < dstsize - 1 && src[i] != '\0')
+	while ((dst_len + i) < dstsize - 1 && src[i] != '\0')
 	{
 		dst[x] = src[i];
 		i++;
 		x++;
 	}
-	dst[x] = '\0';
+	if ((dst_len + i < dstsize))
+		dst[x] = '\0';
 	return (dst_len + src_len);
 }
 
@@ -41,9 +44,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 // #include <string.h>
 // int main(void)
 // {
-//     char arr1[8] = "123";
-//     char arr2[] = "456";
-
-//     printf("Return: %lu\n", ft_strlcat(arr1, arr2, 6));
-//     printf("Output: %s", arr1);
+//     printf("Return: %lu\n", ft_strlcat("pqrstuvwxyz", "abcd", 1));
+//     // printf("Output: %s", ft_strlcat("pqrstuvwxyz", "abcd", 1));
 // }
