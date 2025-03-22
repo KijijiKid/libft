@@ -1,6 +1,6 @@
 NAME=libft.a
 
-CC=gcc
+CC=cc
 INCDIRS=-I.
 CFLAGS=-Wall -Werror -Wextra -g $(INCDIRS)
 AR = ar rcs

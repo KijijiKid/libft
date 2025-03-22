@@ -6,7 +6,7 @@
 /*   By: mandre <mandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 16:32:53 by mandre            #+#    #+#             */
-/*   Updated: 2025/03/16 18:46:50 by mandre           ###   ########.fr       */
+/*   Updated: 2025/03/22 13:07:17 by mandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,30 +15,24 @@
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;
-	size_t	count;
-	size_t	index;
+	size_t	x;
 
-	if (!needle)
-		return ((char *) haystack);
+	if (!needle && !haystack)
+		return (NULL);
+	if (!needle[0])
+		return ((char *)haystack);
 	i = 0;
 	while (haystack[i] != '\0' && i < len)
 	{
-		if (((char *)haystack)[i] == ((char *)needle)[0])
-		{
-			count = 0;
-			index = i;
-			while (((char *)needle)[count] == ((char *)haystack)[i] ||
-			((char *)needle)[count] == '\0')
-			{
-				if (((char *)needle)[count] == '\0')
-					return (&(((char *)haystack)[index]));
-				i++;
-				count++;
-			}
-		}
+		x = 0;
+		while (i + x < len && haystack[i + x]
+			&& needle[x] && haystack[i + x] == needle[x])
+			x++;
+		if (needle[x] == '\0')
+			return ((char *)(haystack + i));
 		i++;
 	}
-	return ((char *)haystack);
+	return (NULL);
 }
 
 // #include <string.h>
