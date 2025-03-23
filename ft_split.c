@@ -6,7 +6,7 @@
 /*   By: mandre <mandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 10:40:27 by mandre            #+#    #+#             */
-/*   Updated: 2025/03/23 14:52:32 by mandre           ###   ########.fr       */
+/*   Updated: 2025/03/23 15:01:44 by mandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,8 @@ char	**ft_split(char const *s, char c)
 
 	word_count = wrd_count(s, c);
 	array = ft_calloc(word_count + 1, sizeof(char *));
+	if (!array)
+		return (NULL);
 	i = 0;
 	while (i < word_count)
 	{
