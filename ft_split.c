@@ -6,11 +6,18 @@
 /*   By: mandre <mandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 10:40:27 by mandre            #+#    #+#             */
-/*   Updated: 2025/03/22 17:21:42 by mandre           ###   ########.fr       */
+/*   Updated: 2025/03/23 14:52:32 by mandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static const char	*get_word_index(const char *s, char c)
+{
+	while (*s == c)
+		s++;
+	return (s);
+}
 
 int	wrd_count(char const *s, char c)
 {
@@ -43,24 +50,25 @@ int	word_len(char const *s, char c)//
 	return (i);
 }
 
-char	*write_word(char const *s, char c)
+char	*write_word(char const **s, char c)
 {
 	int		i;
 	char	*array;
 
 	i = 0;
-	array = NULL;
-	while ((s[i] != '\0') && s[i] != c)
+	while ((*s)[i] != c && (*s)[i])
+		i++;
+	array = (char *)malloc(sizeof(char) * (i + 1));
+	if (!array)
+		return (NULL);
+	i = 0;
+	while ((*s)[i] != c && (*s)[i])
 	{
-		if (s[i] == c)
-		{
-			array[i] = '\0';
-			return (array);
-		}
-		else
-			array[i] = s[i];
+		array[i] = (*s)[i];
 		i++;
 	}
+	array[i] = '\0';
+	*s += i;
 	return (array);
 }
 
@@ -75,7 +83,8 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	while (i < word_count)
 	{
-		array[i] = write_word(s, c);
+		s = get_word_index(s, c);
+		array[i] = write_word(&s, c);
 		i++;
 	}
 	array[i] = NULL;
