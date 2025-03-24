@@ -6,7 +6,7 @@
 /*   By: mandre <mandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 14:55:56 by mandre            #+#    #+#             */
-/*   Updated: 2025/03/24 15:25:59 by mandre           ###   ########.fr       */
+/*   Updated: 2025/03/24 15:38:14 by mandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,6 @@ char	*ft_itoa(int n)
 	array = calloc(i + 1, sizeof(char));
 	if (!array)
 		return (NULL);
-	if (0 == n)
-	{
-		array[0] = '0';
-		return (array);
-	}
 	if (num < 0)
 	{
 		num *= -1;
@@ -60,6 +55,8 @@ char	*ft_itoa(int n)
 		array[i] = (num % 10) + '0';
 		num /= 10;
 	}
+	if (0 == n)
+		array[0] = '0';
 	return (array);
 }
 
