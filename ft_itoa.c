@@ -6,7 +6,7 @@
 /*   By: mandre <mandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 14:55:56 by mandre            #+#    #+#             */
-/*   Updated: 2025/03/24 14:13:17 by mandre           ###   ########.fr       */
+/*   Updated: 2025/03/24 15:25:59 by mandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	get_length(int n)
 
 	i = 0;
 	if (n == 0)
-		return (0);
+		return (1);
 	if (n < 0)
 	{
 		i = 1;
@@ -36,34 +36,38 @@ char	*ft_itoa(int n)
 {
 	char	*array;
 	int		i;
-	int		index;
+	long	num;
 
-	index = 0;
-	array = calloc(get_length(n) + 1, sizeof(char));
+	num = ((long)n);
+	i = get_length(n);
+	array = calloc(i + 1, sizeof(char));
 	if (!array)
 		return (NULL);
-	if (n < 0)
+	if (0 == n)
 	{
-		array[0] = '-';
-		n *= -1;
-		index = 1;
+		array[0] = '0';
+		return (array);
 	}
-	i = get_length(n);
-	array[i + 1] = '\0';
-	while (index <= i)
+	if (num < 0)
 	{
-		array[i] = (n % 10) + '0';
-		n /= 10;
+		num *= -1;
+		array[0] = '-';
+	}
+	array[i] = '\0';
+	while (0 <= i && num != 0)
+	{
 		i--;
+		array[i] = (num % 10) + '0';
+		num /= 10;
 	}
 	return (array);
 }
 
-int	main(void)
-{
-	int	test;
+// int	main(void)
+// {
+// 	int	test;
 
-	test = -2147483648;
-	printf("%i\n", get_length(test));
-	printf("%s\n", ft_itoa(test));
-}
+// 	test = -2147483648;
+// 	printf("%i\n", get_length(test));
+// 	printf("%s\n", ft_itoa(test));
+// }
