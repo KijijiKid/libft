@@ -6,7 +6,7 @@
 /*   By: mandre <mandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 14:55:56 by mandre            #+#    #+#             */
-/*   Updated: 2025/03/23 16:40:39 by mandre           ###   ########.fr       */
+/*   Updated: 2025/03/24 14:13:17 by mandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	get_length(int n)
 	int	i;
 
 	i = 0;
+	if (n == 0)
+		return (0);
 	if (n < 0)
 	{
 		i = 1;
@@ -37,7 +39,7 @@ char	*ft_itoa(int n)
 	int		index;
 
 	index = 0;
-	array = calloc(get_length(n), sizeof(char));
+	array = calloc(get_length(n) + 1, sizeof(char));
 	if (!array)
 		return (NULL);
 	if (n < 0)
@@ -47,8 +49,7 @@ char	*ft_itoa(int n)
 		index = 1;
 	}
 	i = get_length(n);
-	array[i] = '\0';
-	i--;
+	array[i + 1] = '\0';
 	while (index <= i)
 	{
 		array[i] = (n % 10) + '0';
@@ -62,7 +63,7 @@ int	main(void)
 {
 	int	test;
 
-	test = 0;
+	test = -2147483648;
 	printf("%i\n", get_length(test));
 	printf("%s\n", ft_itoa(test));
 }
