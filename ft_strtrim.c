@@ -6,13 +6,13 @@
 /*   By: mandre <mandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/17 14:34:07 by mandre            #+#    #+#             */
-/*   Updated: 2025/03/19 10:39:43 by mandre           ###   ########.fr       */
+/*   Updated: 2025/03/26 17:39:31 by mandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	val_cmp(char digit, const char *set)
+bool	val_cmp(char digit, const char *set)
 {
 	int	i;
 
@@ -20,48 +20,55 @@ int	val_cmp(char digit, const char *set)
 	while (set[i] != '\0')
 	{
 		if (set[i] == digit)
-			return (1);
+			return (true);
 		i++;
 	}
-	return (0);
+	return (false);
 }
 
-char	*s_create(int begin, int end, const char *s1)
+char	*s_create(size_t begin, size_t end, const char *s1)
 {
-	int		i;
-	char	*r_string;
+	size_t		i;
+	char		*str;
+	size_t		len;
 
-	r_string = ft_calloc(end - begin, sizeof(char));
+	len = end - (begin - 1);
+	str = ft_calloc(len + 1, sizeof(char));
+	if (!str)
+		return (ft_strdup(""));
 	i = 0;
-	while (i < end - begin + 1)
+	while (i < len)
 	{
-		r_string[i] = s1[begin + i];
+		str[i] = s1[begin + i];
 		i++;
 	}
-	r_string[begin + i] = '\0';
-	return (r_string);
+	str[i] = '\0';
+	return (str);
 }
 
 char	*ft_strtrim(const char *s1, const char *set)
 {
-	int	i;
-	int	j;
+	size_t	i;
+	size_t	j;
 
+	if (!s1 || !set)
+		return (ft_strdup(""));
 	if (ft_strlen(s1) == 0)
 		return (ft_strdup(""));
 	i = 0;
-	while (val_cmp(s1[i], set))
+	while (val_cmp(s1[i], set) && i < ft_strlen(s1))
 		i++;
 	j = ft_strlen(s1) - 1;
-	while (val_cmp(s1[j], set))
+	while (val_cmp(s1[j], set) && 0 < j)
 		j--;
+	if (j - i < 0 || j < i)
+		return (ft_strdup(""));
 	return (s_create(i, j, s1));
 }
 
 // int main(void)
 // {
-// 	char test1[] = "ababababbbHello World!abababbabab";
-
+// 	char test1[] = "acbdba";
 // 	printf("Before: %s\n", test1);
-// 	printf("After: %s\n", ft_strtrim(test1, "ab"));
+// 	printf("After: %s\n", ft_strtrim(test1, "abc"));
 // }

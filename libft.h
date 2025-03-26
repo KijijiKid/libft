@@ -6,7 +6,7 @@
 /*   By: mandre <mandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 15:26:51 by mandre            #+#    #+#             */
-/*   Updated: 2025/03/26 12:55:38 by mandre           ###   ########.fr       */
+/*   Updated: 2025/03/26 15:32:09 by mandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdio.h>
+# include <stdbool.h>
 
 int		ft_atoi(const char *str);
 void	ft_bzero(void *str, size_t size);
@@ -49,5 +50,7 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+char	*ft_strtrim(const char *s1, const char *set);
+char	*ft_strjoin(char const *s1, char const *s2);
 
 #endif
