@@ -6,7 +6,7 @@
 /*   By: mandre <mandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 12:30:48 by mandre            #+#    #+#             */
-/*   Updated: 2025/03/26 12:34:13 by mandre           ###   ########.fr       */
+/*   Updated: 2025/03/26 12:59:14 by mandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,26 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	ft_putchar_fd(n + 48, fd);
+	if (n == -2147483648)
+		write(fd, "-2147483648", 11);
+	if (n < 0)
+	{
+		write(fd, "-", 1);
+		n *= -1;
+	}
+	if (9 < n)
+	{
+		ft_putnbr_fd(n / 10, 1);
+		ft_putnbr_fd(n % 10, 1);
+	}
+	else
+	{
+		n += 48;
+		write(fd, &n, 1);
+	}
 }
+
+// int	main(void)
+// {
+// 	ft_putnbr_fd(-1234, 1);
+// }
