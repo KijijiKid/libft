@@ -6,7 +6,7 @@
 /*   By: mandre <mandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/17 14:18:13 by mandre            #+#    #+#             */
-/*   Updated: 2025/03/27 10:16:06 by mandre           ###   ########.fr       */
+/*   Updated: 2025/03/27 10:28:01 by mandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	if (!s1 || !s2)
 		return (NULL);
-	str = calloc(ft_strlen(s1) + ft_strlen(s2) + 1, sizeof(char));
+	str = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (!str)
 		return (NULL);
 	i = 0;
@@ -34,3 +34,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	str[i] = '\0';
 	return (str);
 }
+
+// int	main(void)
+// {
+// 	printf("Before: %s", ft_strjoin("", ""));
+// }

@@ -6,7 +6,7 @@
 /*   By: mandre <mandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 18:48:20 by mandre            #+#    #+#             */
-/*   Updated: 2025/03/27 09:54:53 by mandre           ###   ########.fr       */
+/*   Updated: 2025/03/27 10:22:07 by mandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ void	*ft_calloc(size_t count, size_t size)
 	size_t			i;
 	unsigned char	*tmp;
 
-	if (size != 0 && ~(size_t)0 / size < count)
-		return (NULL);
 	tmp = malloc(count * size);
 	if (!tmp)
 		return (NULL);
