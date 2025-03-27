@@ -6,7 +6,7 @@
 /*   By: mandre <mandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/17 10:37:22 by mandre            #+#    #+#             */
-/*   Updated: 2025/03/22 14:03:30 by mandre           ###   ########.fr       */
+/*   Updated: 2025/03/27 10:00:37 by mandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,11 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 
 	if (!s)
 		return (NULL);
-	if (ft_strlen(s) < start || ft_strlen(s) < start + len)
+	if (ft_strlen(s) < start)
 		return (ft_strdup(""));
-	substr = (char *)ft_calloc(len + 1, sizeof(char));
+	if (ft_strlen(s + start) < len)
+		len = ft_strlen(s + start);
+	substr = ft_calloc(len + 1, sizeof(char));
 	if (!(substr))
 		return (NULL);
 	i = 0;
@@ -30,6 +32,7 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 		substr[i] = s[i + start];
 		i++;
 	}
+	substr[i] = '\0';
 	return (substr);
 }
 

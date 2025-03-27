@@ -6,7 +6,7 @@
 /*   By: mandre <mandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/17 14:18:13 by mandre            #+#    #+#             */
-/*   Updated: 2025/03/20 10:42:48 by mandre           ###   ########.fr       */
+/*   Updated: 2025/03/27 10:16:06 by mandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,18 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t		i;
 	char		*str;
 
-	if (!s1 && !s2)
+	if (!s1 || !s2)
 		return (NULL);
 	str = calloc(ft_strlen(s1) + ft_strlen(s2) + 1, sizeof(char));
 	if (!str)
 		return (NULL);
 	i = 0;
-	while (i < ft_strlen(s1))
-	{
-		str[i] = s1[i];
-		i++;
-	}
 	while (i < ft_strlen(s1) + ft_strlen(s2))
 	{
-		str[i] = s2[i];
+		if (i < ft_strlen(s1))
+			str[i] = s1[i];
+		else
+			str[i] = s2[i - ft_strlen(s1)];
 		i++;
 	}
 	str[i] = '\0';

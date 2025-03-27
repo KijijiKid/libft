@@ -6,7 +6,7 @@
 /*   By: mandre <mandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/17 14:34:07 by mandre            #+#    #+#             */
-/*   Updated: 2025/03/26 17:39:31 by mandre           ###   ########.fr       */
+/*   Updated: 2025/03/26 17:57:46 by mandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ char	*ft_strtrim(const char *s1, const char *set)
 
 // int main(void)
 // {
-// 	char test1[] = "acbdba";
+// 	char test1[] = "xxxz  test with x and z and x .  zx  xx z";
 // 	printf("Before: %s\n", test1);
-// 	printf("After: %s\n", ft_strtrim(test1, "abc"));
+// 	printf("After: %s\n", ft_strtrim(test1, "z x"));
 // }
