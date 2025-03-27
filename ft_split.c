@@ -6,7 +6,7 @@
 /*   By: mandre <mandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 10:40:27 by mandre            #+#    #+#             */
-/*   Updated: 2025/03/27 11:44:40 by mandre           ###   ########.fr       */
+/*   Updated: 2025/03/27 12:51:53 by mandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,12 @@ int	wrd_count(char const *s, char c)
 	return (count);
 }
 
-int	word_len(char const *s, char c)// 
+int	word_len(char const *s, char c)
 {
 	int	i;
 
 	i = 0;
-	while (s[i] != '\0' || s[i] != c)
+	while (s[i] != '\0' && s[i] != c)
 		i++;
 	return (i);
 }
@@ -56,7 +56,7 @@ char	*write_word(char const **s, char c)
 	char	*array;
 
 	i = 0;
-	while ((*s)[i] != c && s[i])
+	while ((*s)[i] != c && (*s)[i] != '\0')
 		i++;
 	array = (char *)malloc(sizeof(char) * (i + 1));
 	if (!array)
@@ -89,6 +89,11 @@ char	**ft_split(char const *s, char c)
 	{
 		s = get_word_index(s, c);
 		array[i] = write_word(&s, c);
+		if (!array)
+		{
+			free(array[i]);
+			return (NULL);
+		}
 		i++;
 	}
 	array[i] = NULL;
@@ -97,7 +102,7 @@ char	**ft_split(char const *s, char c)
 
 // int	main(void)
 // {
-// 	char test[] = "Hello!";
+// 	char test[] = "";
 // 	printf("After: %i\n", wrd_count(test, ' '));
-// 	printf("After: %s\n", *ft_split(test, ' '));
+// 	printf("After: %s\n", *ft_split("", ' '));
 // }
