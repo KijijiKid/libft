@@ -6,13 +6,26 @@
 /*   By: mandre <mandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 10:40:27 by mandre            #+#    #+#             */
-/*   Updated: 2025/03/27 12:51:53 by mandre           ###   ########.fr       */
+/*   Updated: 2025/03/27 16:56:11 by mandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static const char	*get_word_index(const char *s, char c)
+void	free_split(char **ptr, int c)
+{
+	int	i;
+
+	i = 0;
+	while (i < c)
+	{
+		free(ptr[i]);
+		i++;
+	}
+	free(ptr);
+}
+
+const char	*get_word_index(const char *s, char c)
 {
 	while (*s == c)
 		s++;
@@ -40,23 +53,13 @@ int	wrd_count(char const *s, char c)
 	return (count);
 }
 
-int	word_len(char const *s, char c)
-{
-	int	i;
-
-	i = 0;
-	while (s[i] != '\0' && s[i] != c)
-		i++;
-	return (i);
-}
-
 char	*write_word(char const **s, char c)
 {
 	int		i;
 	char	*array;
 
 	i = 0;
-	while ((*s)[i] != c && (*s)[i] != '\0')
+	while ((*s)[i] != c && (*s)[i])
 		i++;
 	array = (char *)malloc(sizeof(char) * (i + 1));
 	if (!array)
@@ -89,14 +92,14 @@ char	**ft_split(char const *s, char c)
 	{
 		s = get_word_index(s, c);
 		array[i] = write_word(&s, c);
-		if (!array)
+		if (!array[i])
 		{
-			free(array[i]);
+			free_split(array, i);
 			return (NULL);
 		}
 		i++;
 	}
-	array[i] = NULL;
+	array[word_count] = NULL;
 	return (array);
 }
 
@@ -104,5 +107,5 @@ char	**ft_split(char const *s, char c)
 // {
 // 	char test[] = "";
 // 	printf("After: %i\n", wrd_count(test, ' '));
-// 	printf("After: %s\n", *ft_split("", ' '));
+// 	printf("After: %s\n", *ft_split(NULL, ' '));
 // }

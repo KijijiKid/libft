@@ -6,7 +6,7 @@
 /*   By: mandre <mandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 14:55:56 by mandre            #+#    #+#             */
-/*   Updated: 2025/03/27 11:11:47 by mandre           ###   ########.fr       */
+/*   Updated: 2025/03/27 16:30:09 by mandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char	*ft_itoa(int n)
 
 	num = ((long)n);
 	i = get_length(n);
-	array = calloc(i + 1, sizeof(char));
+	array = (char *)malloc(sizeof(char) * (i + 1));
 	if (!array)
 		return (NULL);
 	if (num < 0)
