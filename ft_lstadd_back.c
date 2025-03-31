@@ -6,7 +6,7 @@
 /*   By: mandre <mandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/30 14:19:44 by mandre            #+#    #+#             */
-/*   Updated: 2025/03/30 15:18:45 by mandre           ###   ########.fr       */
+/*   Updated: 2025/03/31 14:47:54 by mandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,14 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*temp;
 
+	if (!lst || !new)
+		return ;
+	if (!*lst)
+	{
+		*lst = new;
+		return ;
+	}
 	temp = ft_lstlast(*lst);
-	new->next = temp->next;
 	temp->next = new;
 }
 
