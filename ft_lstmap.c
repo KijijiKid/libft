@@ -6,7 +6,7 @@
 /*   By: mandre <mandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 13:25:47 by mandre            #+#    #+#             */
-/*   Updated: 2025/03/31 15:33:52 by mandre           ###   ########.fr       */
+/*   Updated: 2025/04/01 10:12:50 by mandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,19 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*tmp;
 	t_list	*new_lst;
+	void	*content;
 
 	if (!lst || !f || !del)
 		return (NULL);
 	new_lst = NULL;
 	while (lst)
 	{
-		tmp = ft_lstnew(f(lst->content));
+		content = f(lst->content);
+		tmp = ft_lstnew(content);
 		if (!tmp)
 		{
 			if (del)
-				del(tmp->content);
+				del(content);
 			ft_lstclear(&new_lst, del);
 			return (NULL);
 		}
