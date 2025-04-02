@@ -39,4 +39,4 @@ fclean: clean
 bonus: $(ALL_OBJ)
 	ar rcs $(NAME) $(ALL_OBJ)
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus
